@@ -90,12 +90,69 @@ El entorno que vamos a necesitar para instalar Pandora FMS y la monitorización 
 * Red: 192.168.112.0/23
 * Dirección IP: 192.168.112.230
   
-## 2.1.6  Instalación y configuración en máquinas a monitorizar.
+## 2.1.6  Instalación y configuración Pandora FMS
+* Servidor
+  
+Una vez arrancada la maquina con la ISO de Pandora FMS procedemos a hacer al instalación.
+
+![Instalación](./img/1pandora.png)
+
+Seleccionamos el lenguaje.
+
+![Instalación](./img/2pandora.png)
+
+Aqui podemos ver el resumen particionado del disco:
+
+![Instalación](./img/3pandora.png)
+
+Por último definimos la contraseña del superusuario:
+
+![Instalación](./img/4pandora.png)
+
+Esperemos a que finalice la instalacion y accedemos desde el navegador con la ip que nos proporciona:
+
+![Instalación](./img/5pandora.png)
+
+Aquí vemos una vista de cómo es la herramienta desde el navegador. Por defecto PandoraFMS tiene un usuario y contraseña estándar al realizar la instalación que luego habrá que modificar por motivos de seguridad.
+
+Nos logueamos con el usuario admin y contraseña pandora.
+
+![Instalación](./img/6pandora.png)
 
 ## 2.1.7  Instalación y configuración en agentes 
-## 2.1.8  Diseño de pruebas.  Decisión de servicios a monitorizar
+
+* Agente
+
+Descargamos el instalador del agente en el servidor y procedemos a la configuración. Introducimos la IP de Servidor Pandora.
+
+![Agente](./img/7pandora.png)
+
+Nos vamos al servidor Pandora, y vemos que ya se ha instalado el agente y podemos monitorizarlo desde el panel de Pandora.
+
+![Agente](./img/8pandora.png)
+
 ## 2.1.9  Puesta en marcha (pruebas) y ejemplo de uso.
 
+Para las pruebas voy a ver el registro de eventos de Windows que no requiere instalación.
+Instalación de nfdump:
+
+![Pruebas](./img/9pandora.png)
+
+Ejecutaremos la siguiente orden para comprobar que las funciones están instaladas:
+
+![Pruebas](./img/10pandora.png)
+
+Activamos NetFlow:
+
+![Pruebas](./img/11pandora.png)
+
+Prueba de registro de eventos en Windows Server Agente. Podemos ver los eventos en el servidor y en el agente:
+
+![Pruebas](./img/12pandora.png)
+
+Para ello iremos a la pestaña recursos y en gestión de agentes seleccionamos Windows y aparecerá un gráfico como vemos en la captura de arriba. Podemos ver todos los eventos que se han producido en las últimas horas fraccionando estos en eventos normales, críticos o advertencias. Ahora veremos los eventos del agente Windows:
+
+![Pruebas](./img/13pandora.png)
  # 2.2 Zabbix
  ## 2.2.1  Historia
 
@@ -192,9 +249,30 @@ Y una vez lo configuramos ya podemos iniciar sesión.
 ![Entorno](./img/conf_zabbix3.png)
 
 ## 2.2.7  Instalación y configuración en agentes 
-## 2.2.8  Diseño de pruebas.  Decisión de servicios a monitorizar
-## 2.2.9  Puesta en marcha (pruebas) y ejemplo de uso.
+Para la instalacion de un agente Zabbix lo que hemos instalado ha sido un Windows Server 2016 con las siguientes caracteristicas:
 
+![Agente_zabbix](./img/agente_zabbix6.png)
+
+El siguiente paso seria instalarnos el agente Zabbix:
+
+
+![Agente_zabbix](./img/agente_zabbix2.png)
+
+
+![Agente_zabbix](./img/agente_zabbix3.png)
+
+## 2.2.9  Puesta en marcha (pruebas) y ejemplo de uso.
+A continuacion vamos a realizar las pruebas de un agente con Zabbix.
+
+![Agente_zabbix](./img/agente_zabbix4.png)
+
+Aqui podemos ver que ya hemos incorporado nuestro agente.
+
+![Agente_zabbix](./img/agente_zabbix5.png)
+
+Y aqui nos muestra si hay algun error y como esta funcionando nuestro agente.
+
+![Agente_zabbix](./img/agente_zabbix.png)
  # 3.  Conclusiones y problemas encontrados 
 
 Para el entorno que nosotros hemos creado, los recursos que necesitamos son simples.
